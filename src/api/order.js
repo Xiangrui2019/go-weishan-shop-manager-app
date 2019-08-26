@@ -1,8 +1,10 @@
 import axios from 'axios';
 import * as conf from '../conf/config'
 
-var getNonPubishOrder = () => axios.get("{0}/api/v1/order/non_publish".format(conf.pay_server))
+const getNonPubishOrder = (limit, start) => axios.get("{0}/api/v1/order/non_publish?limit={1}&start={2}".format(conf.pay_server, limit, start))
+const publishOrder = (id) => axios.get("{0}/web/v1/order/publish/".format(conf.pay_server)+id)
 
 export {
-    getNonPubishOrder
+    getNonPubishOrder,
+    publishOrder
 };
