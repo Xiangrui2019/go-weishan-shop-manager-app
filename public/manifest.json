@@ -1,6 +1,6 @@
 {
-  "name": "go-weishan-shop-manager-app",
-  "short_name": "go-weishan-shop-manager-app",
+  "name": "微山掌上拍管理界面",
+  "short_name": "微山掌上拍管理界面",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
