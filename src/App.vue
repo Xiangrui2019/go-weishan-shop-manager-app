@@ -37,7 +37,7 @@ export default {
     return {
       admin: [],
       start: 0,
-      limit: 3,
+      limit: 4,
       total: 0,
     };
   },
