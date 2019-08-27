@@ -62,7 +62,7 @@ export default {
   },
   beforeMount() {
     this.load();
-    setInterval(this.load, 10000)
+    setInterval(this.load, 1000 * 10)
   }
 }
 </script>
