@@ -7,6 +7,8 @@
           <br />
           商品ID: {{item.good_id}}
           <br />
+          订单ID: {{item.id}}
+          <br />
           姓名: {{item.real_name}}
           <br />
           电话号码: {{item.phone_number}}
@@ -21,8 +23,9 @@
           <span class="el-icon-check" style="color: lawngreen" v-if="item.self_mention == true"></span>
           <span class="el-icon-close" style="color: red" v-if="item.self_mention == false"></span>
           <br />
-          <el-button type="primary" @click.native="viewmap(item)">查看地图</el-button>
-          <el-button type="primary" @click.native="confirm(item.id)">确认发货</el-button>
+          <el-button type="primary" v-if="item.self_mention == false" @click.native="viewmap(item)">查看地图</el-button>
+          <el-button type="primary" v-if="item.self_mention == false" @click.native="confirm(item.id)" >确认发货</el-button>
+          <el-button type="primary" v-if="item.self_mention == true" @click.native="confirm(item.id)" >确认</el-button>
         </div>
       </el-card>
       <br />
