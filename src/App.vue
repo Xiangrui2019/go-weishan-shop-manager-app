@@ -1,21 +1,32 @@
 <template>
   <div id="app">
-    <ul v-for="item in admin.items">
-      <li>
-        商品名称: {{item.good_name}} &nbsp; 商品ID: {{item.good_id}}
-        <br />
-        姓名: {{item.real_name}} &nbsp; 电话号码: {{item.phone_number}}
-        <br />
-        地址: {{item.address}}
-        <br />
-        拓展信息: {{item.ext_info}}
-        <br />
-        购买数量: {{item.buy_count}} &nbsp; 付款金额: {{item.buy_price}}
-        <br />
-        <el-button type="primary" @click.native="viewmap(item)">查看地图</el-button>
-        <el-button type="primary" @click.native="confirm(item.id)">确认发货</el-button>
-      </li>
-    </ul>
+    <div v-for="item in admin.items">
+      <el-card class="box-card">
+        <div class="text item">
+          商品名称: {{item.good_name}}
+          <br />
+          商品ID: {{item.good_id}}
+          <br />
+          姓名: {{item.real_name}}
+          <br />
+          电话号码: {{item.phone_number}}
+          <br />
+          地址: {{item.address}}
+          <br />
+          拓展信息: {{item.ext_info}}
+          <br />
+          付款金额: {{item.buy_price}}
+          <br/>
+          到店自提:
+          <span class="el-icon-check" style="color: lawngreen" v-if="item.self_mention == true"></span>
+          <span class="el-icon-close" style="color: red" v-if="item.self_mention == false"></span>
+          <br />
+          <el-button type="primary" @click.native="viewmap(item)">查看地图</el-button>
+          <el-button type="primary" @click.native="confirm(item.id)">确认发货</el-button>
+        </div>
+      </el-card>
+      <br />
+    </div>
 
     <el-pagination
             background
